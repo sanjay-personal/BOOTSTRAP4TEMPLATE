@@ -1,0 +1,70 @@
+// .card
+// {
+//     background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+//     color: white;
+// }
+
+.primary-color {
+    background-color: #4285f4!important;
+    color: white;
+}
+.warning-color {
+    background-color: #fb3!important;
+    color: white;
+}
+
+.light-blue {
+    background-color: #29b6f6!important;
+    color: white;
+}
+
+.accent {
+    background-color: #ff5252!important;
+    color: white;
+}
+
+.classic-admin-card .progress{
+    // margin: 0;
+    opacity: .7;
+}
+
+.card{
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+    border: 0;
+    font-weight: 400;
+}
+
+.progress-bar{
+    background-color:#16c73ffa 
+}
+
+
+
+
+.flip-card {
+    perspective: 1000px;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }

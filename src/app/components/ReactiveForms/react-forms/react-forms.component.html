@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="Steps">
+        <h6 class="rfrules text-center"><b>RULES</b></h6>
+     <ul>
+         <li> Creating the HTML Page </li>
+         <li> Creating the Form Model 
+            <ul>
+                <li>Import ReactiveFormModule</li>
+                <li><b>formGroup</b> uesd in form Tag</li>
+                <li><b>formControlName</b> uesd in every input element</li>
+            </ul>
+         </li>
+         <li> <b>Nesting Form Groups </b> are used group of controls make one group 
+           
+            <ul>
+                <li>to make one group we use <b>formGroupName</b> at div tag level</li>
+                <li>eg for address is one group,group of controls are state,city and postal code</li>
+            </ul>
+        </li>
+        <li> Managing Control Values
+            <ul>
+                <li>Managing Control Values are used for on clicking particular form data and prepopulating</li>
+                <li><b>Set Value</b> uesd for according to form all controls are manadtory to prepopulating </li>
+                <li><b>Patch Value</b> uesd for according to form all controls are not manadtory to prepopulating </li>
+                <li>below we have two buttons <b>Load API Set Value</b> & <b>Load API Patch Value</b> </li>
+            </ul>
+         </li>
+     </ul>
+    </div>
+
+        <h2>Registration Form</h2>
+        <form [formGroup]="registrationForm"  >
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" class="form-control" formControlName="username" >
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="password">
+            </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" class="form-control" formControlName="confirmPassword">
+            </div>
+            <div formGroupName = "address">
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" formControlName="city" >
+                </div>
+                <div class="form-group">
+                    <label>State</label>
+                    <input type="text" class="form-control" formControlName="state">
+                </div>
+                <div class="form-group">
+                    <label>Postal Code</label>
+                    <input type="text" class="form-control" formControlName="postalCode">
+                </div>
+            </div>
+            <button class="btn btn-success" type="submit" (click)="onSubmit()"> Submit</button>
+            <button class="btn btn-primary ml-2" type="button" (click)="onLoadAPISetValue()">Load API Set Value</button>
+            <button class="btn btn-danger ml-2" type="button" (click)="onLoadAPIPatchValue()">Load API Patch Value</button>
+
+        </form>
+
+        <div>
+            <pre>
+                {{registrationForm.value | json}}
+            </pre>
+        </div>
+</div>
