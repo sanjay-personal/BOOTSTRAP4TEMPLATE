@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactFormsComponent } from './components/ReactiveForms/react-forms/react-forms.component';
 import { ReactFormsFormBuliderComponent } from './components/ReactiveForms/react-forms/react-forms-form-bulider/react-forms-form-bulider.component';
 import { HomeComponent } from './components/home/home.component';
+import { IsLoggedUserDirective } from './directive/is-logged-user.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,8 @@ import { HomeComponent } from './components/home/home.component';
     ClickdirectiveDirective,
     TopbarBelowComponent,
     ReactFormsComponent,
-    ReactFormsFormBuliderComponent
+    ReactFormsFormBuliderComponent,
+    IsLoggedUserDirective
   ],
   imports: [
     BrowserModule,

@@ -33,6 +33,8 @@ export class LoginpageComponent implements OnInit {
       this.authservice.setloggeeduser(this.model.email)
        this.route.navigate([''])
       
+    } else {
+      alert("please enter username and password 123")
     }
   }
 }

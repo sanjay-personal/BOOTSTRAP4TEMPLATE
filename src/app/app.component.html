@@ -1,5 +1,5 @@
-<app-topbar [hidden]="!login()"></app-topbar>
-<app-topbar-below [hidden]="!login()"></app-topbar-below>
+<app-topbar *appIsLoggedUser></app-topbar>
+<app-topbar-below *appIsLoggedUser></app-topbar-below>
 <!-- <app-sidebar></app-sidebar> -->
 <div class="container-fluid flex-grow-1 pt-1">
     
@@ -8,5 +8,4 @@
     </router-outlet>
     
 </div>
-<app-footer [hidden]="!login()"></app-footer>
-
+<app-footer *appIsLoggedUser></app-footer>

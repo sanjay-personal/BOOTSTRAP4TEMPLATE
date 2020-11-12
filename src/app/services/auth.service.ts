@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { NgxSpinnerService } from 'ngx-spinner';
 declare var $: any;
 declare var bootbox: any;
@@ -11,12 +11,16 @@ export class AuthService {
 
   private message = new BehaviorSubject([])
   currentmsg = this.message.asObservable()
+  public loginState = new Subject();
+
 
   constructor(private spinner: NgxSpinnerService) { }
 
 
   setloggeeduser(email) {
     localStorage.setItem('emailkey', email)
+    this.loginStateChanged();
+
   }
 
   getlogedduser() {
@@ -75,5 +79,9 @@ export class AuthService {
       $(".bootbox.modal").find(".modal-footer").find('button').css({ "background-color": "green", "color": "white" });
 
     });
+  }
+
+  loginStateChanged() {
+    this.loginState.next();
   }
 }
